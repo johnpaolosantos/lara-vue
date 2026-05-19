@@ -10,10 +10,11 @@ class Section extends Model
     /** @use HasFactory<\Database\Factories\SectionFactory> */
     use HasFactory;
     protected $fillable = ['name', 'class_id'];
+    protected $table = 'sections';
 
-    public function stundent()
+    public function students()
     {
-        return $this->belongsTo(Student::class);
+        return $this->hasMany(Student::class);
     }
     public function class()
     {
